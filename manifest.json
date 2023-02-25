@@ -1,0 +1,23 @@
+{
+    
+    "manifest_version":3,
+    "name":"Sid Copy",
+    "version":"0.1",
+    "description":"To Enable Copy paste from protected website",
+    "action": {
+        "default_title":"Disabled"
+    },
+    "icons" : {
+        "64":"icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+      },
+
+    "content_scripts":[{
+            "matches":["*://*/*"],
+            "js":["content.js"],
+            "run_at":"document_start"
+        }]
+    
+}
